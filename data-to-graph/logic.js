@@ -13,4 +13,11 @@ function addRow() {
     table.appendChild(row);
 }
 
-document.getElementById('button').onclick = addRow();
+// Retrieved from this answer
+// https://stackoverflow.com/a/25721457
+document.addEventListener('DOMContentLoaded', () => {
+    for(i=0;i<2;i++) {
+        addRow();
+    }
+    document.getElementById('button').addEventListener("click", addRow);
+});
